@@ -1,95 +1,194 @@
+
+/*** Background ***/
 body{
     background-size: cover;
     background-attachment: fixed;
-    background-image: url("Image/background_2.jpg");
+    background-image: url("Image/background.jpg");
+    flex-direction: column;
+    align-items: center;
 }
+a{text-decoration: none; color:#cd7203;}
+a:hover{color: #eac65b;}
 
-/* Header */
+/***** Computer *****/
+
+/*** Header ***/
 div.header{
     display: flex; 
     justify-content: space-between; /* elements are spread across the screen */
-    border-top: 0.3cqi black;
+    border-top: 0.3cqw black;
     background-color: transparent;
     color: black;
     align-items: center;
     height: 10%;
     font-family: Tahoma;
-    border-bottom: 0.3cqi solid black;
+    border-bottom: 0.3cqw solid black;
 }
+
 div.header div.left{
     background-color: transparent;
-    padding-left: 3cqi;
-    font-size: 3cqi;
+    padding-left: 5cqw;
+    font-size: max(3cqi, 12pt);
 }
 
 div.header div.right{
     display: inline;
     background-color: transparent;
-    padding-right: 2cqi;
-    font-size: 2.5cqi;
+    padding-right: 5cqw;
+    font-size: 2.5cqw;
     float: right;
+    font-size: max(3cqw, 12pt);
 }
 
 div.header div.right span{
-    padding: 0.5cqi;
-    margin-right: 0.5cqi;
+    padding: 0.5cqw;
+    margin-right: 0.5cqw;
 }
 
-div.header div.right span:hover{
-    font-size: 2.5cqi;
-}
-
-/* Body */
+/*** Body ***/
 div.body{
     display: flex;
-    /* background-size: cover;
+    background-size: cover;
     background-attachment: fixed;
-    background-image: url("Image/background_2.jpg"); */
-    height: 100%;
+    height: 120%;
 }
+
+/* Body Left */
 
 div.body div.left{
     width: 20%;
     display: block;
     color: black;
-    padding-left: 2cqi;
-    padding-right: 2cqi;
-    padding-top: 2cqi;
-    font-size: 1.3cqi;
+    padding-left: 5cqw;
+    padding-right: 1cqw;
+    padding-top: 2cqw;
+    font-size: 1.5cqw;
     font-family: 'Verdana';
     text-align: left;
-    /* background-color: #fbc93d; 
-    border-right: 0.3cqi solid; */
 }
 
-div.body div.left figure{
-    margin: 0%;
+div.body div.left img{width: 100%}
+
+div.body div.left>div{
+    padding:auto;
+    margin-right:3cqw;
+    margin-bottom:1cqw;
+    font-size: 2cqw;
 }
 
-div.body div.left pre{
-    text-align: left;
+div.body div.left>div::first-letter{
+    font-size: 2.5cqw;
+    font-weight: 200;
 }
 
-div.body a{
-    color:#fbc93d;
-    text-decoration: none;
-}
+
+/* Body Right */
 
 div.body div.right{
-    width: 60%;
+    width: 80%;
     color: black;
-    padding-left: 2cqi;
-    padding-right: 2cqi;
-    padding-top: 2cqi;
-    font-size: 1.5cqi;
+    padding-left: 5cqw;
+    padding-right: 5cqw;
+    padding-top: 2cqw;
+    font-size: 2cqw;
     font-family: 'Verdana';
-    text-align: left;
-    /* background-color: #fbc93d; 
-    border-right: 0.3cqi solid; */
+    align-items: center;
 }
 
-h1{
-    color: #fbc93d;
+div.body h1{
+    font-size: 2.5cqw;
+}
+
+
+/***** Smarphone *****/
+
+@media screen and (max-aspect-ratio: 0.9){
+    /*** Header ***/
+    div.header{
+        display: flex; 
+        justify-content: space-between; /* elements are spread across the screen */
+        border-top: 0.3cqi black;
+        color: black;
+        align-items: center;
+        height: 6cqh;
+        width: 100%;
+        font-family: Tahoma;
+        border-bottom: 0.3cqi solid black;
+    }
+
+    /* Header Left */
+
+    div.header div.left{
+        background-color: transparent;
+        padding-left: 1cqh;
+        font-size: 3cqh;
+    }
+
+    /* Header Right */
+
+    div.header div.right{
+        background-color: transparent;
+        padding-right: 1cqh;
+        font-size: 3cqh;
+    }
+
+    /*** Body ***/
+
+    body{
+        background-size: cover;
+        background-attachment: fixed;
+        background-position: center; 
+        background-image: url("Image/background_smartphone.jpg");
+    }
+    div.body{
+        width: 100%;
+        display: flex;
+        background-size: cover;
+        background-attachment: fixed;
+        flex-direction: column;
+        padding: auto;
+        align-items: center;
+        height: 180%;
+    }
+
+    /* Body Left */
+    div.body div.left{
+        width: 80%;
+        padding-top: 10%;
+        display: inline;
+        color: black;
+        font-size: 3cqh;
+        font-family: 'Verdana';
+        flex-direction: column;
+        text-align: center;
+    }
+
+    div.body div.left>div{
+        padding:1cqh;
+        margin-bottom: auto;
+        font-size: 2.5cqh;
+    }
+
+    div.body div.left img{ width: 75% }
+
+    div.body div.left>div::first-letter{
+        font-size: 3.5cqh;
+    }
+
+
+    /* Body Right */
+
+    div.body div.right{
+        width: 80%;
+        color: black;
+        font-size: 3cqh;
+        font-family: 'Verdana';
+        text-align: left;
+    }
+
+    div.body div.right h1{
+        font-size: 4cqh;
+    }
 }
 
 

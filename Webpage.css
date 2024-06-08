@@ -5,82 +5,101 @@ body{
     background-attachment: fixed;
     background-image: url("Image/background.jpg");
     flex-direction: column;
-    align-items: center;
+    align-items: end;
 }
-a{text-decoration: none; color:#cd7203;}
-a:hover{color: #eac65b;}
-
+a{text-decoration: none; color: #fa5454;}
+a:hover{color: #f99898;}
 /***** Computer *****/
 
 /*** Header ***/
-div.header{
+@media screen and (min-aspect-ratio: 1.1){
+    div.header{
+    width: 100%;
     display: flex; 
     justify-content: space-between; /* elements are spread across the screen */
-    border-top: 0.3cqw black;
-    background-color: transparent;
-    color: black;
+    background-color: black;
+    color: white;
     align-items: center;
-    height: 10%;
-    font-family: Tahoma;
-    border-bottom: 0.3cqw solid black;
+    height: 12%;
+    font-family: Verdana, Tahoma, sans-serif;
+    }
+
+    /* Header Left */
+
+    div.header div.left{
+        padding-left: 5cqw;
+        font-size: 3cqw;
+    }
+
+    /* Header Right */
+
+    div.header div.right{
+        display: inline;
+        padding-right: 5cqw;
+        float: right;
+        font-size: 3cqw;
+    }
+
+    div.header div.right span{
+        padding: 0.5cqw;
+        margin-right: 0.5cqw;
+    }
+
+    /* Header Link Color */
+    div.header a{
+        color: white;
+    }
+
+    div.header a:hover{
+        color: #f99898;
+    }
+
+    /*** Body ***/
+    div.body{
+        display: flex;
+        overflow: scroll;
+    }
+
+    div.home_height{
+        height: 100cqh
+    }
+
+    div.home{
+        height: 120%;
+    }
+
+    /* Body Left */
+
+    div.body div.left{
+        width: 20%;
+        display: block;
+        color: black;
+        padding-left: 5cqw;
+        padding-right: 1cqw;
+        padding-top: 2cqw;
+        font-size: 1.5cqw;
+        font-family: 'Verdana';
+        text-align: left;
+    }
+
+    div.body div.left img{width: 100%}
+
+    div.body div.left>div{
+        padding:auto;
+        margin-right:3cqw;
+        margin-bottom:1cqw;
+        font-size: 2cqw;
+    }
+
+    div.body div.left>div::first-letter{
+        font-size: 2.5cqw;
+        font-weight: 200;
+    }
+
+    div.body img{
+        border: 10px #f99898 dotted;
+    }
 }
-
-div.header div.left{
-    background-color: transparent;
-    padding-left: 5cqw;
-    font-size: max(3cqi, 12pt);
-}
-
-div.header div.right{
-    display: inline;
-    background-color: transparent;
-    padding-right: 5cqw;
-    font-size: 2.5cqw;
-    float: right;
-    font-size: max(3cqw, 12pt);
-}
-
-div.header div.right span{
-    padding: 0.5cqw;
-    margin-right: 0.5cqw;
-}
-
-/*** Body ***/
-div.body{
-    display: flex;
-    background-size: cover;
-    background-attachment: fixed;
-    height: 120%;
-}
-
-/* Body Left */
-
-div.body div.left{
-    width: 20%;
-    display: block;
-    color: black;
-    padding-left: 5cqw;
-    padding-right: 1cqw;
-    padding-top: 2cqw;
-    font-size: 1.5cqw;
-    font-family: 'Verdana';
-    text-align: left;
-}
-
-div.body div.left img{width: 100%}
-
-div.body div.left>div{
-    padding:auto;
-    margin-right:3cqw;
-    margin-bottom:1cqw;
-    font-size: 2cqw;
-}
-
-div.body div.left>div::first-letter{
-    font-size: 2.5cqw;
-    font-weight: 200;
-}
-
 
 /* Body Right */
 
@@ -103,52 +122,71 @@ div.body h1{
 /***** Smarphone *****/
 
 @media screen and (max-aspect-ratio: 0.9){
+    body{
+        background-size: cover;
+        background-attachment: fixed;
+        background-position: bottom; 
+        background-image: url("Image/background_smartphone.jpg");
+    }
+
     /*** Header ***/
     div.header{
         display: flex; 
-        justify-content: space-between; /* elements are spread across the screen */
+        flex-direction: column;
         border-top: 0.3cqi black;
-        color: black;
+        color: white;
         align-items: center;
-        height: 6cqh;
+        background-color: black;
+        height: 15%;
         width: 100%;
         font-family: Tahoma;
         border-bottom: 0.3cqi solid black;
+        justify-content: space-evenly;
+    }
+
+    /* Header Link Color */
+    div.header a{
+        color: white;
+    }
+
+    div.header a:hover{
+        color: #f99898;
     }
 
     /* Header Left */
 
     div.header div.left{
-        background-color: transparent;
-        padding-left: 1cqh;
-        font-size: 3cqh;
+        font-size: 5cqh;
+        text-align: center;
     }
 
     /* Header Right */
 
     div.header div.right{
-        background-color: transparent;
-        padding-right: 1cqh;
         font-size: 3cqh;
+        width: 80%;
+        display: flex;
+        justify-content: space-evenly;
     }
 
     /*** Body ***/
-
-    body{
-        background-size: cover;
-        background-attachment: fixed;
-        background-position: center; 
-        background-image: url("Image/background_smartphone.jpg");
-    }
     div.body{
         width: 100%;
         display: flex;
-        background-size: cover;
-        background-attachment: fixed;
         flex-direction: column;
-        padding: auto;
         align-items: center;
-        height: 180%;
+    }
+
+    div.Home_height{
+        height: 180cqh;
+    }
+
+    div.Notes_height{
+        height: 100%;
+    }
+
+    div.body img{
+        border: 10px #f99898 dotted;
     }
 
     /* Body Left */
